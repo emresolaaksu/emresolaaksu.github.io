@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Visualization</title>
+  <!-- Include necessary Plotly.js library -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>Data Visualization with Plotly</h1>
+
+  <!-- Container for Plotly chart -->
+  <div id="plotly-chart"></div>
+
+  <script>
+    // Your Plotly chart configuration
+    var data = [
+      {
+        x: [1, 2, 3, 4],
+        y: [10, 15, 13, 17],
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Data'
+      }
+    ];
+
+    var layout = {
+      title: 'Sample Plotly Chart',
+      xaxis: { title: 'X-axis' },
+      yaxis: { title: 'Y-axis' }
+    };
+
+    // Create Plotly chart in the specified div
+    Plotly.newPlot('plotly-chart', data, layout);
+  </script>
+</body>
+</html>

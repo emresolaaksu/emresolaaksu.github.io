@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Embedded Plotly Chart</title>
-  <!-- Include Plotly.js CDN -->
+  <title>Data Visualization</title>
+  <!-- Include necessary Plotly.js library -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <h1>Embedded Plotly Chart Example</h1>
+  <h1>Data Visualization with Plotly</h1>
 
-  <!-- Embed the Plotly chart div directly -->
-  <div id="plotly-chart">
+  <!-- Container for Plotly chart -->
+  <div id="plotly-chart"></div>
+
   <script>
-      import plotly.graph_objs as go
-      from plotly.offline import plot
+    // Your Plotly chart configuration
+    var data = [
+      {
+        x: [1, 2, 3, 4],
+        y: [10, 15, 13, 17],
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Data'
+      }
+    ];
 
-      # Example data
-      data = [go.Bar(x=[1, 2, 3], y=[4, 5, 6])]
+    var layout = {
+      title: 'Sample Plotly Chart',
+      xaxis: { title: 'X-axis' },
+      yaxis: { title: 'Y-axis' }
+    };
 
-      # Create the Plotly figure
-      fig = go.Figure(data=data)
-
-      # Generate the Plotly chart as a div
-      plot_div = plot(fig, output_type='div', include_plotlyjs=False)   
-  <script>
-  </div>
+    // Create Plotly chart in the specified div
+    Plotly.newPlot('plotly-chart', data, layout);
+  </script>
 </body>
 </html>
